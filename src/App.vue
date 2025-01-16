@@ -1,7 +1,8 @@
 <template>
-  <section>
+
+  <router-view>
     
-  </section>
+  </router-view>
 </template>
 
 <style lang="sass" scoped>
