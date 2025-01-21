@@ -1,6 +1,6 @@
 <template>
     <section>
-      <h2>Registro de Usuarios</h2>
+      <h2>Registrate</h2>
       <form @submit.prevent="registerUser">
         <div>
           <label for="email">Correo Electrónico</label>
@@ -25,6 +25,7 @@
         </div>
   
         <button type="submit">Registrarse</button>
+        <span>¿Ya tienes una cuenta? <router-link to="/login">Iniciar sesión</router-link></span>
       </form>
     </section>
   </template>

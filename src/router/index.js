@@ -3,6 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 // Asegúrate de importar el componente Perfil
 import Perfil from "../views/PerfilView.vue";
 // Importa la instancia de autenticación de Firebase para verificar el usuario autenticado
+
+//imprtamos la vista Login
+import Login from "../views/LoginView.vue"
 import { auth } from "@/db/firebase";
 
 // Define las rutas de la aplicación
@@ -18,9 +21,16 @@ const routes = [
     path: '/perfil', // URL de la ruta
     name: 'perfil', // Nombre único para identificar la ruta
     component: Perfil, // Componente asociado a esta ruta (asegúrate de importarlo arriba si no lo has hecho)
-    props: (route) => ({ userName: route.params.userName }), // Pasa `userName` como propiedad al componente desde los parámetros de la ruta
     meta: { requiresAuth: true }, // Indica que esta ruta requiere autenticación
   },
+
+  {
+    // Ruta del login del usuario 
+    path: '/login', // URL de la ruta
+    name: 'login', // Nombre único para identificar la ruta 
+    component: Login, // Componente asociado a esta ruta
+    meta: {requiresAutn: true }, // Indica que esta ruta requiere autenticación
+  }
 ];
 
 // Crea una instancia de Vue Router
